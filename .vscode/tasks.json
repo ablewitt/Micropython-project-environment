@@ -1,0 +1,74 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Sync /",
+            "type": "shell",
+            "command": "export RSHELL_PORT=/dev/tty.SLAB_USBtoUART && rshell rsync -v src /pyboard",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+                {
+            "label": "Sync /lib",
+            "type": "shell",
+            "command": "export RSHELL_PORT=/dev/tty.SLAB_USBtoUART && rshell rsync -v src/lib /pyboard",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+                        {
+            "label": "Sync ALL",
+            "type": "shell",
+            "command": "export RSHELL_PORT=/dev/tty.SLAB_USBtoUART && rshell rsync -v src/lib /pyboard && && rshell rsync -v src /pyboard",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "REPL",
+            "type": "shell",
+            "command": "export RSHELL_PORT=/dev/tty.SLAB_USBtoUART && rshell repl",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            }
+        }
+    ]
+}
